@@ -99,6 +99,10 @@ class MainActivity : AppCompatActivity(), Callback<List<ImageMeme>>, ImageAdapte
 
     override fun itemClicked(position: Int) {
         Log.e("position", position.toString())
+
+        val i = Intent (this@MainActivity, Main2Activity::class.java)
+        i.putExtra("llave","valor")
+        startActivity(i)
     }
 
 }

@@ -47,8 +47,7 @@ class DBCrearPedido(private val context: Context) {
     //Log.e("ohfoiwsgauio", cursor.getInt(4)+"");
     val listPedidosGuardados: ArrayList<PedidosGuardados> get() {
 
-        val selectQuery = "SELECT  * FROM" +
-                " ${DataBaseCrearPedidoHelper.TABLE_CREAR_PEDIDO}"
+        val selectQuery = "SELECT  * FROM" + " ${DataBaseCrearPedidoHelper.TABLE_CREAR_PEDIDO}"
         val db = dbHelper!!.contextlist
         val cursor = db.rawQuery(selectQuery, null)
         val FavList = ArrayList<PedidosGuardados>()

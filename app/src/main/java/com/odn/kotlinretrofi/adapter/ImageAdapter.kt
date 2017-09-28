@@ -94,6 +94,7 @@ public class ImageAdapter(private val context: Context, private val imageMemeLis
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
 
+                        clickListener!!.itemClicked(position)
                     } else {
                         clickListener!!.itemClicked(position)
 
