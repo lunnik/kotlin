@@ -12,22 +12,13 @@ import com.odn.kotlinretrofi.adapter.PruebaAdapter
 import com.odn.kotlinretrofi.database.model.DataBaseCrearPedidoHelper
 import com.odn.kotlinretrofi.model.Prueba
 
-class Main2Activity : AppCompatActivity(), PruebaAdapter.ClickListener {
+class Main2Activity : BaseActivity(), PruebaAdapter.ClickListener {
+    override fun myView(): Int {
+        return R.layout.activity_main2;
+    }
 
+    override fun activityCreated() {
 
-    var heloWorl: TextView? = null
-
-    var num: Int? = null
-
-    var pruebaAdapter: PruebaAdapter? = null
-
-    var list: ArrayList<Prueba>? = null
-
-    var rvPruebas: RecyclerView? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
         if (intent.extras != null) {
             val userId = intent.getStringExtra("llave")
             Log.e("userId", userId)
@@ -58,8 +49,20 @@ class Main2Activity : AppCompatActivity(), PruebaAdapter.ClickListener {
         rvPruebas!!.adapter = pruebaAdapter
         pruebaAdapter!!.notifyDataSetChanged()
 
-
     }
+
+
+    var heloWorl: TextView? = null
+
+    var num: Int? = null
+
+    var pruebaAdapter: PruebaAdapter? = null
+
+    var list: ArrayList<Prueba>? = null
+
+    var rvPruebas: RecyclerView? = null
+
+
 
     override fun onClick(position: Int) {
 
