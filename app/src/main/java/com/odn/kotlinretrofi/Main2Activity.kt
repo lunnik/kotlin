@@ -11,10 +11,11 @@ import android.widget.TextView
 import com.odn.kotlinretrofi.adapter.PruebaAdapter
 import com.odn.kotlinretrofi.database.model.DataBaseCrearPedidoHelper
 import com.odn.kotlinretrofi.model.Prueba
+import com.odn.kotlinretrofi.periodictasks.PeriodicTaskActivity
 
 class Main2Activity : BaseActivity(), PruebaAdapter.ClickListener {
     override fun myView(): Int {
-        return R.layout.activity_main2;
+        return R.layout.activity_main2
     }
 
     override fun activityCreated() {
@@ -63,9 +64,9 @@ class Main2Activity : BaseActivity(), PruebaAdapter.ClickListener {
     var rvPruebas: RecyclerView? = null
 
 
-
     override fun onClick(position: Int) {
-
+        var intent = Intent(this@Main2Activity, PeriodicTaskActivity::class.java)
+        startActivity(intent)
     }
 
 
