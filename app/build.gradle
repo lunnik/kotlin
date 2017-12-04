@@ -48,6 +48,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.2-3'
+    compile 'com.github.marcoscgdev:DialogSheet:1.0.2'
 
     kapt 'com.android.databinding:compiler:2.3.2'
     testCompile 'junit:junit:4.12'

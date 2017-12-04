@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import android.view.View
 import com.odn.kotlinretrofi.adapter.ImageAdapter
 import com.odn.kotlinretrofi.api.ServiceApi
 import com.odn.kotlinretrofi.database.model.DBCrearPedido
@@ -16,6 +17,9 @@ import com.odn.kotlinretrofi.model.ImageMeme
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.marcoscg.dialogsheet.DialogSheet
+
+
 
 class MainActivity : AppCompatActivity(), Callback<List<ImageMeme>>, ImageAdapter.ClickListener {
 
@@ -39,9 +43,27 @@ class MainActivity : AppCompatActivity(), Callback<List<ImageMeme>>, ImageAdapte
     }
 
     fun initSetUp() {
+
+        DialogSheet(this)
+                .setTitle(R.string.app_name)
+                .setMessage("testo de prueba ")
+                .setPositiveButton(android.R.string.ok, object : DialogSheet.OnPositiveClickListener {
+                    override
+                    fun onClick(v: View) {
+                        // Your action
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, object : DialogSheet.OnNegativeClickListener {
+                    override
+                    fun onClick(v: View) {
+                        // Your action
+                    }
+                })
+                .setButtonsColorRes(R.color.colorPrimary)  // Default color is accent
+                .show()
         dbCrearPedido.open()
         dbCrearPedido.insert(1, "gksodjao", "skddfnsklf", 1, "0")
-        rvImageTop = findViewById(R.id.fi_rv_image_top) as RecyclerView?
+        rvImageTop = findViewById<RecyclerView>(R.id.fi_rv_image_top)
 
 
         try {

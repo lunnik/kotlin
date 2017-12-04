@@ -24,8 +24,8 @@ class Main2Activity : BaseActivity(), PruebaAdapter.ClickListener {
             val userId = intent.getStringExtra("llave")
             Log.e("userId", userId)
         }
-        heloWorl = findViewById(R.id.am2_tv_hello_world) as TextView
-        rvPruebas = findViewById(R.id.am2_rv_pruebas) as RecyclerView
+        heloWorl = findViewById<TextView>(R.id.am2_tv_hello_world)
+        rvPruebas = findViewById<RecyclerView>(R.id.am2_rv_pruebas)
         num = 15
         heloWorl!!.setText(num.toString())
         heloWorl!!.text = "HOLA " +
